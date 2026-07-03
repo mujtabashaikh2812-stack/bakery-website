@@ -1,0 +1,124 @@
+.menu-page {
+  padding-top: 80px;
+  background: #f8f4f0;
+  min-height: 100vh;
+}
+
+.menu-header {
+  background: linear-gradient(135deg, #d4a574, #b8945f);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-bottom: 5px solid #2c1810;
+  animation: slideDown 0.8s ease-out;
+}
+
+.menu-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.menu-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+  background: white;
+  padding: 1rem;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c1810;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+  background: linear-gradient(135deg, #d4a574, #b8945f);
+  color: white;
+  box-shadow: 0 5px 15px rgba(212, 165, 116, 0.4);
+}
+
+.menu-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.menu-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+  border-left: 5px solid transparent;
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+.menu-item:hover {
+  transform: translateX(10px);
+  border-left-color: #d4a574;
+}
+
+.item-icon {
+  font-size: 2.5rem;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c1810;
+  margin-bottom: 0.5rem;
+}
+
+.item-description {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.item-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #d4a574;
+}
+
+@media (max-width: 768px) {
+  .menu-tabs {
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 1rem;
+  }
+  .tab-btn {
+    justify-content: center;
+  }
+  .menu-item {
+    flex-direction: column;
+    text-align: center;
+  }
+} 
