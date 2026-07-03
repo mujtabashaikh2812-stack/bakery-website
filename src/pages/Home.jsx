@@ -1,5 +1,18 @@
 import { useState, useEffect } from 'react';
-import { FaBirthdayCake, FaStar, FaHeart, FaUtensils, FaTruck, FaClock, FaArrowRight, FaPlay, FaQuoteLeft, FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
+import {
+  FaBirthdayCake,
+  FaStar,
+  FaHeart,
+  FaUtensils,
+  FaTruck,
+  FaClock,
+  FaArrowRight,
+  FaPlay,
+  FaQuoteLeft,
+  FaInstagram,
+  FaFacebook,
+  FaTwitter
+} from 'react-icons/fa';
 import './Home.css';
 
 const Home = () => {
@@ -8,12 +21,12 @@ const Home = () => {
 
   useEffect(() => {
     setIsVisible(true);
-    
+
     // Auto-slide for testimonials
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % 3);
     }, 5000);
-    
+
     return () => clearInterval(interval);
   }, []);
 
@@ -119,9 +132,7 @@ const Home = () => {
         <div className="container">
           <div className="hero-content">
             <div className="hero-text">
-              <h1 className="hero-title">
-                Welcome to A B Bakery
-              </h1>
+              <h1 className="hero-title">Welcome to A B Bakery</h1>
               <p className="hero-subtitle">
                 Fresh baked goods made with love and tradition
               </p>
@@ -146,7 +157,7 @@ const Home = () => {
                 <a href="/menu" className="btn btn-secondary">
                   View Menu
                 </a>
-                <button className="btn btn-play">
+                <button type="button" className="btn btn-play">
                   <FaPlay /> Watch Video
                 </button>
               </div>
@@ -172,12 +183,12 @@ const Home = () => {
             <div className="about-text">
               <h2 className="section-title">Our Story</h2>
               <p className="about-description">
-                Founded in 1995, Sweet Dreams Bakery began as a small family kitchen with a big dream: 
+                Founded in 1995, Sweet Dreams Bakery began as a small family kitchen with a big dream:
                 to create the most delicious and beautiful baked goods that would bring joy to every celebration.
               </p>
               <p className="about-description">
-                Today, we're proud to serve our community with over 25 years of experience, crafting 
-                everything from simple cookies to elaborate wedding cakes. Every item is made with 
+                Today, we're proud to serve our community with over 25 years of experience, crafting
+                everything from simple cookies to elaborate wedding cakes. Every item is made with
                 the same love and attention to detail that started it all.
               </p>
               <div className="about-features">
@@ -216,8 +227,8 @@ const Home = () => {
           </p>
           <div className="features-grid">
             {features.map((feature, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="feature-card"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -249,7 +260,9 @@ const Home = () => {
                   <span className="product-category">{product.category}</span>
                   <h3 className="product-name">{product.name}</h3>
                   <div className="product-price">{product.price}</div>
-                  <button className="btn btn-small">Add to Cart</button>
+                  <button type="button" className="btn btn-small">
+                    Add to Cart
+                  </button>
                 </div>
               </div>
             ))}
@@ -269,8 +282,8 @@ const Home = () => {
           <div className="testimonials-container">
             <div className="testimonials-slider">
               {testimonials.map((testimonial, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`testimonial-card ${index === currentSlide ? 'active' : ''}`}
                 >
                   <FaQuoteLeft className="quote-icon" />
@@ -291,6 +304,7 @@ const Home = () => {
               {testimonials.map((_, index) => (
                 <button
                   key={index}
+                  type="button"
                   className={`dot ${index === currentSlide ? 'active' : ''}`}
                   onClick={() => setCurrentSlide(index)}
                 />
@@ -312,19 +326,40 @@ const Home = () => {
               <FaInstagram className="social-icon" />
               <h3>Instagram</h3>
               <p>Daily inspiration and fresh creations</p>
-              <a href="#" className="social-link">Follow @sweetdreamsbakery</a>
+              <a
+                href="https://www.instagram.com/sweetdreamsbakery"
+                className="social-link"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Follow @sweetdreamsbakery
+              </a>
             </div>
             <div className="social-card">
               <FaFacebook className="social-icon" />
               <h3>Facebook</h3>
               <p>Community updates and special offers</p>
-              <a href="#" className="social-link">Like our page</a>
+              <a
+                href="https://www.facebook.com/sweetdreamsbakery"
+                className="social-link"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Like our page
+              </a>
             </div>
             <div className="social-card">
               <FaTwitter className="social-icon" />
               <h3>Twitter</h3>
               <p>Quick updates and baking tips</p>
-              <a href="#" className="social-link">Follow us</a>
+              <a
+                href="https://twitter.com/sweetdreamsbakery"
+                className="social-link"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Follow us
+              </a>
             </div>
           </div>
         </div>
@@ -351,4 +386,4 @@ const Home = () => {
   );
 };
 
-export default Home; 
+export default Home;
